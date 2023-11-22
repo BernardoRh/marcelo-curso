@@ -8,15 +8,16 @@ import {
   FormLabel,
   ProfessorAvatar,
   ProfessorInformationOnForm,
+  SendButton,
   UserFormApp,
   UserFormLabel,
 } from './styles'
 
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export default function Form() {
   const router = useRouter()
-
   const { professor } = router.query
 
   const ChosenProfessorComponent = () => {
@@ -57,8 +58,13 @@ export default function Form() {
     }
   }
 
+  async function handleFormSubmit(data: any) {
+    event.preventDefault()
+    window.location.assign('https://w.app/RzOn2I')
+  }
+
   return (
-    <FormContainer action="">
+    <FormContainer onSubmit={handleFormSubmit}>
       <ChosenProfessorComponent />
       <UserFormApp>
         <UserFormLabel htmlFor="">
@@ -94,6 +100,7 @@ export default function Form() {
         <span>Pergunta Cinco?</span>
         <textarea name="" id="" cols={30} rows={10} />
       </FormLabel>
+      <SendButton type="submit">ENVIAR RESPOSTAS</SendButton>
     </FormContainer>
   )
 }

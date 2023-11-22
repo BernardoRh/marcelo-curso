@@ -9,7 +9,7 @@ export const FormContainer = styled('form', {
   justifyContent: 'center',
   alignItems: 'center',
   gap: '2rem',
-  margin: '2rem 8rem',
+  margin: '4rem 8rem',
   marginTop: '3rem',
 })
 
@@ -133,4 +133,18 @@ export const ProfessorAvatar = styled(Image, {
   width: '12rem',
   height: '12rem',
   borderRadius: '9999px',
+})
+
+export const SendButton = styled('button', {
+  all: 'unset',
+  padding: '1.5rem',
+  width: 312,
+  textAlign: 'center',
+  borderRadius: '4px',
+  background: '$lightGreen',
+  cursor: 'pointer',
+
+  '@media(max-width: 530px)': {
+    width: 242,
+  },
 })
