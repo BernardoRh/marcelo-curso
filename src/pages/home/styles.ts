@@ -9,4 +9,8 @@ export const HomeContainer = styled('div', {
   alignItems: 'center',
   gap: '6rem',
   margin: '2rem 8rem',
+
+  '@media(max-width: 810px)': {
+    gap: '3rem',
+  },
 })

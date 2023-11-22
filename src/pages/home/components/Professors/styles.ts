@@ -4,9 +4,13 @@ import Image from 'next/image'
 export const ProfessorsContainer = styled('main', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
-  columnGap: '4rem',
+  columnGap: '3rem',
   rowGap: '2rem',
   marginTop: '4rem',
+
+  '@media(max-width: 810px)': {
+    gridTemplateColumns: '1fr',
+  },
 })
 
 export const ProfessorInformation = styled('div', {
@@ -25,10 +29,26 @@ export const ProfessorInformation = styled('div', {
     h3: {
       fontSize: '$lg',
       lineHeight: '1.5rem',
+
+      '@media(max-width: 910px)': {
+        fontSize: '150%',
+      },
+
+      '@media(max-width: 810px)': {
+        fontSize: '130%',
+      },
     },
 
     h4: {
       fontSize: '$md',
+
+      '@media(max-width: 910px)': {
+        fontSize: '100%',
+      },
+
+      '@media(max-width: 810px)': {
+        fontSize: '90%',
+      },
     },
   },
 
@@ -39,8 +59,10 @@ export const ProfessorInformation = styled('div', {
   variants: {
     occupation: {
       true: {
-        gridColumnStart: 1,
-        gridColumnEnd: 3,
+        '@media(min-width: 810px)': {
+          gridColumnStart: 1,
+          gridColumnEnd: 3,
+        },
       },
       false: {},
     },

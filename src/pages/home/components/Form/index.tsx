@@ -1,8 +1,22 @@
-import { FormContainer, FormLabel } from './styles'
+import { FormContainer, FormLabel, UserFormApp, UserFormLabel } from './styles'
 
 export function Form() {
   return (
     <FormContainer action="">
+      <UserFormApp>
+        <UserFormLabel htmlFor="">
+          <span>Nome</span>
+          <input type="text" />
+        </UserFormLabel>
+        <UserFormLabel htmlFor="">
+          <span>Whatsapp</span>
+          <input type="number" />
+        </UserFormLabel>
+        <UserFormLabel htmlFor="" occupation={true}>
+          <span>Email</span>
+          <input type="email" />
+        </UserFormLabel>
+      </UserFormApp>
       <FormLabel htmlFor="">
         <span>Pergunta Um?</span>
         <textarea name="" id="" cols={30} rows={10} />
