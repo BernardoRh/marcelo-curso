@@ -13,8 +13,9 @@ import {
   UserFormLabel,
 } from './styles'
 
+import { FormEvent } from 'react'
+
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 export default function Form() {
   const router = useRouter()
@@ -58,7 +59,7 @@ export default function Form() {
     }
   }
 
-  async function handleFormSubmit(data: any) {
+  async function handleFormSubmit(event: FormEvent) {
     event.preventDefault()
     window.location.assign('https://w.app/RzOn2I')
   }
