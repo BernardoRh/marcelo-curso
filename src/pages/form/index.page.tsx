@@ -13,13 +13,20 @@ import {
   UserFormLabel,
 } from './styles'
 
-import { FormEvent } from 'react'
-
+import { FormEvent, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Form() {
   const router = useRouter()
   const { professor } = router.query
+
+  useEffect(() => {
+    if (router.isReady) {
+      if (!professor) {
+        router.push('/')
+      }
+    }
+  }, [router.isReady])
 
   const ChosenProfessorComponent = () => {
     switch (professor) {
