@@ -21,6 +21,11 @@ export const ProfessorInformation = styled('div', {
   gap: '0.5rem',
   textAlign: 'center',
 
+  a: {
+    all: 'unset',
+    cursor: 'pointer',
+  },
+
   div: {
     display: 'flex',
     flexDirection: 'column',

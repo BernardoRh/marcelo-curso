@@ -1,14 +1,16 @@
-import { styled } from '../../../../../stitches.config'
+import Image from 'next/image'
+import { styled } from '../../../stitches.config'
 
 export const FormContainer = styled('form', {
-  maxWidth: 512,
-  minWidth: 352,
   height: 'auto',
+  maxWidth: 'calc(100vw - 16rem)',
   display: 'flex',
   flexDirection: 'column',
-  gap: '2rem',
   justifyContent: 'center',
   alignItems: 'center',
+  gap: '2rem',
+  margin: '2rem 8rem',
+  marginTop: '3rem',
 })
 
 export const UserFormApp = styled('div', {
@@ -84,4 +86,51 @@ export const FormLabel = styled('label', {
   '@media(max-width: 530px)': {
     width: 312,
   },
+})
+
+export const ProfessorInformationOnForm = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '0.5rem',
+  textAlign: 'center',
+
+  div: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.25rem',
+
+    h3: {
+      fontSize: '$lg',
+      lineHeight: '1.5rem',
+
+      '@media(max-width: 910px)': {
+        fontSize: '150%',
+      },
+
+      '@media(max-width: 810px)': {
+        fontSize: '130%',
+      },
+    },
+
+    h4: {
+      fontSize: '$md',
+
+      '@media(max-width: 910px)': {
+        fontSize: '100%',
+      },
+
+      '@media(max-width: 810px)': {
+        fontSize: '90%',
+      },
+    },
+  },
+})
+
+export const ProfessorAvatar = styled(Image, {
+  border: 0,
+  width: '12rem',
+  height: '12rem',
+  borderRadius: '9999px',
 })
