@@ -68,6 +68,10 @@ export const FormLabel = styled('label', {
   flexDirection: 'column',
   gap: '0.25rem',
 
+  strong: {
+    fontSize: '110%',
+  },
+
   textarea: {
     width: '100%',
     resize: 'none',
@@ -85,6 +89,10 @@ export const FormLabel = styled('label', {
 
   '@media(max-width: 530px)': {
     width: 312,
+    fontSize: '70%',
+    strong: {
+      fontSize: '110%',
+    },
   },
 })
 
