@@ -13,7 +13,7 @@ import {
   UserFormLabel,
 } from './styles'
 
-import { FormEvent, useEffect } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Form() {
@@ -66,6 +66,25 @@ export default function Form() {
     }
   }
 
+  const [questions, setQuestions] = useState<string[]>([])
+
+  useEffect(() => {
+    switch (professor) {
+      case 'PlaceHolder': {
+        setQuestions(PlaceHolder?.questions)
+        break
+      }
+      case 'ValeriaBaierleFigueira': {
+        setQuestions(ValeriaBaierleFigueira?.questions)
+        break
+      }
+      case 'MeurisPandolfoSeibel': {
+        setQuestions(MeurisPandolfoSeibel?.questions)
+        break
+      }
+    }
+  }, [professor])
+
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault()
     window.location.assign('https://w.app/RzOn2I')
@@ -89,24 +108,34 @@ export default function Form() {
         </UserFormLabel>
       </UserFormApp>
       <FormLabel htmlFor="">
-        <span>Pergunta Um?</span>
-        <textarea name="" id="" cols={30} rows={10} />
+        <span>
+          <strong>1.</strong> {questions[0]}
+        </span>
+        <textarea name="questionOne" />
       </FormLabel>
       <FormLabel htmlFor="">
-        <span>Pergunta Dois?</span>
-        <textarea name="" id="" cols={30} rows={10} />
+        <span>
+          <strong>2.</strong> {questions[1]}
+        </span>
+        <textarea name="questionTwo" />
       </FormLabel>
       <FormLabel htmlFor="">
-        <span>Pergunta Tres?</span>
-        <textarea name="" id="" cols={30} rows={10} />
+        <span>
+          <strong>3.</strong> {questions[2]}
+        </span>
+        <textarea name="questionThree" />
       </FormLabel>
       <FormLabel htmlFor="">
-        <span>Pergunta Quatro?</span>
-        <textarea name="" id="" cols={30} rows={10} />
+        <span>
+          <strong>4.</strong> {questions[3]}
+        </span>
+        <textarea name="questionFour" />
       </FormLabel>
       <FormLabel htmlFor="">
-        <span>Pergunta Cinco?</span>
-        <textarea name="" id="" cols={30} rows={10} />
+        <span>
+          <strong>5.</strong> {questions[4]}
+        </span>
+        <textarea name="questionFive" />
       </FormLabel>
       <SendButton type="submit">ENVIAR RESPOSTAS</SendButton>
     </FormContainer>
