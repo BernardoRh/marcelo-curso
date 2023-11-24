@@ -54,6 +54,14 @@ export const UserFormLabel = styled('label', {
     marginLeft: '0.25rem',
   },
 
+  'input::-webkit-outer-spin-button': {
+    '-webkit-appearance': 'none',
+  },
+
+  'input::-webkit-inner-spin-button': {
+    '-webkit-appearance': 'none',
+  },
+
   input: {
     width: '100%',
     resize: 'none',

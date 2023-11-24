@@ -10,6 +10,8 @@ import {
   ProfessorAvatar,
   ProfessorInformationOnForm,
   SendButton,
+  UserFormApp,
+  UserFormLabel,
 } from './styles'
 
 import { FormEvent, useEffect, useState } from 'react'
@@ -94,6 +96,20 @@ export default function Form() {
   return (
     <FormContainer onSubmit={handleFormSubmit}>
       <ChosenProfessorComponent />
+      <UserFormApp>
+        <UserFormLabel htmlFor="">
+          <span>Nome</span>
+          <input type="text" />
+        </UserFormLabel>
+        <UserFormLabel htmlFor="">
+          <span>Whatsapp</span>
+          <input type="number" />
+        </UserFormLabel>
+        <UserFormLabel htmlFor="" occupation={true}>
+          <span>Email</span>
+          <input type="email" />
+        </UserFormLabel>
+      </UserFormApp>
       <h6>
         RESPONDA ESTAS QUESTÕES ATRAVEZ DE UM VIDEO, E O ENVIE ATRAVEZ DO
         WHATSSAP
