@@ -11,6 +11,29 @@ export const FormContainer = styled('form', {
   gap: '2rem',
   margin: '4rem 8rem',
   marginTop: '3rem',
+
+  h6: {
+    display: 'flex',
+    fontSize: '$md',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    textAlign: 'center',
+
+    '@media(max-width: 910px)': {
+      fontSize: '130%',
+      width: 512,
+    },
+
+    '@media(max-width: 810px)': {
+      fontSize: '110%',
+    },
+
+    '@media(max-width: 530px)': {
+      fontSize: '100%',
+      width: 312,
+    },
+  },
 })
 
 export const UserFormApp = styled('div', {
@@ -72,27 +95,42 @@ export const FormLabel = styled('label', {
     fontSize: '110%',
   },
 
-  textarea: {
-    width: '100%',
-    resize: 'none',
-    padding: '0.5rem',
-    border: '2px solid transparent',
+  '@media(max-width: 530px)': {
+    width: 312,
+    fontSize: '90%',
+  },
+})
+
+export const CheckboxLabel = styled('div', {
+  width: 512,
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '1rem',
+
+  button: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '1.25rem',
+    height: '1.25rem',
+    background: 'transparent',
+    border: '2px solid $gray',
     borderRadius: '4px',
-    outline: '2px solid black',
 
-    '&:focus': {
-      outline: '2px solid $lightBlue',
+    span: {
+      display: 'flex',
+
+      svg: {
+        fill: '$gray',
+      },
     },
-
-    height: 116,
   },
 
   '@media(max-width: 530px)': {
     width: 312,
-    fontSize: '70%',
-    strong: {
-      fontSize: '110%',
-    },
+    fontSize: '90%',
   },
 })
 

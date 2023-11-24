@@ -18,6 +18,7 @@ export const {
       greenCyan: '#7AFAD1',
       lightBlue: '#7AE3FA',
       lightGreen: '#7AFA91',
+      gray: '#292929',
     },
     fontSizes: {
       sm: '0.75rem',

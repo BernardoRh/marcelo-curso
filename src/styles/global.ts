@@ -6,6 +6,7 @@ export const globalStyles = globalCss({
     padding: 0,
     margin: 0,
     fontFamily: '$default',
+    color: '$gray',
   },
 
   body: {

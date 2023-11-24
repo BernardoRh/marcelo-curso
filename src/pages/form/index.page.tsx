@@ -4,17 +4,18 @@ import {
   ValeriaBaierleFigueira,
 } from '@/utils/professorsInfo'
 import {
+  CheckboxLabel,
   FormContainer,
   FormLabel,
   ProfessorAvatar,
   ProfessorInformationOnForm,
   SendButton,
-  UserFormApp,
-  UserFormLabel,
 } from './styles'
 
 import { FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import * as Checkbox from '@radix-ui/react-checkbox'
+import { Check } from 'phosphor-react'
 
 export default function Form() {
   const router = useRouter()
@@ -93,50 +94,42 @@ export default function Form() {
   return (
     <FormContainer onSubmit={handleFormSubmit}>
       <ChosenProfessorComponent />
-      <UserFormApp>
-        <UserFormLabel htmlFor="">
-          <span>Nome</span>
-          <input type="text" />
-        </UserFormLabel>
-        <UserFormLabel htmlFor="">
-          <span>Whatsapp</span>
-          <input type="number" />
-        </UserFormLabel>
-        <UserFormLabel htmlFor="" occupation={true}>
-          <span>Email</span>
-          <input type="email" />
-        </UserFormLabel>
-      </UserFormApp>
+      <h6>RESPONDA ESTAS QUESTÕES ATRAVEZ DE UM VIDEO</h6>
       <FormLabel htmlFor="">
         <span>
           <strong>1.</strong> {questions[0]}
         </span>
-        <textarea name="questionOne" />
       </FormLabel>
       <FormLabel htmlFor="">
         <span>
           <strong>2.</strong> {questions[1]}
         </span>
-        <textarea name="questionTwo" />
       </FormLabel>
       <FormLabel htmlFor="">
         <span>
           <strong>3.</strong> {questions[2]}
         </span>
-        <textarea name="questionThree" />
       </FormLabel>
       <FormLabel htmlFor="">
         <span>
           <strong>4.</strong> {questions[3]}
         </span>
-        <textarea name="questionFour" />
       </FormLabel>
       <FormLabel htmlFor="">
         <span>
           <strong>5.</strong> {questions[4]}
         </span>
-        <textarea name="questionFive" />
       </FormLabel>
+      <CheckboxLabel>
+        <Checkbox.Root className="CheckboxRoot" id="c1">
+          <Checkbox.Indicator className="CheckboxIndicator">
+            <Check weight="fill" width={18} height={18} />
+          </Checkbox.Indicator>
+        </Checkbox.Root>
+        <label className="Label" htmlFor="c1">
+          Necessito apoio em libras.
+        </label>
+      </CheckboxLabel>
       <SendButton type="submit">ENVIAR RESPOSTAS</SendButton>
     </FormContainer>
   )
