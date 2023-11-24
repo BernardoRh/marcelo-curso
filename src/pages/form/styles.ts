@@ -17,13 +17,8 @@ export const FormContainer = styled('form', {
     fontSize: '$md',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%',
+    width: 512,
     textAlign: 'center',
-
-    '@media(max-width: 910px)': {
-      fontSize: '130%',
-      width: 512,
-    },
 
     '@media(max-width: 810px)': {
       fontSize: '110%',

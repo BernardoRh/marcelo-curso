@@ -94,7 +94,10 @@ export default function Form() {
   return (
     <FormContainer onSubmit={handleFormSubmit}>
       <ChosenProfessorComponent />
-      <h6>RESPONDA ESTAS QUESTÕES ATRAVEZ DE UM VIDEO</h6>
+      <h6>
+        RESPONDA ESTAS QUESTÕES ATRAVEZ DE UM VIDEO, E O ENVIE ATRAVEZ DO
+        WHATSSAP
+      </h6>
       <FormLabel htmlFor="">
         <span>
           <strong>1.</strong> {questions[0]}
